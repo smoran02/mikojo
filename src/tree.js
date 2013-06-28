@@ -20,7 +20,6 @@ $(function(){
                     onDragStop: function(node) {
                         logMsg("tree.onDragStop(%o)", node);
                         nodeName = node.data.title;
-                        alert(nodeName);
                     }
             },
             children: [ // Pass an array of nodes.
@@ -141,8 +140,14 @@ $(function(){
         });
 
         $('#clear').on('click', function(){
-            $('#searchcontainer > div').html("");
+            $('#editSearch').html("");
+            $('#doc-info').html("");
+            $('#query-desc').html("");
+            $('#searchProgress').html("");
+            $('#search-columns').html("");
         });
+
+        $('#col-table input').prop('checked', true);
 
         $('.rowcontainer').sortable({axis: "x"});
         $('#editSearch').disableSelection();

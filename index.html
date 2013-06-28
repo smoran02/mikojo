@@ -35,7 +35,6 @@ The University of Southern California does not screen or control the content on 
 
 </head>
 
-
 <body>
     <div id="container">
         <nav id="primary">
@@ -54,15 +53,64 @@ The University of Southern California does not screen or control the content on 
         <div id="searchcontainer">
             <nav id="searchnav">
                 <ul>
-                    <li><a href="#">Documentation</a></li>
+                    <li><a class="content-link-active" href="#">Documentation</a></li>
                     <li><a href="#">Columns</a></li>
-                    <li><a class="content-link-active" href="#">Edit Search</a></li>
+                    <li><a href="#">Edit Search</a></li>
                     <li><a href="#">Search Progress</a></li>
                 </ul>
             </nav>
-            <div id="documentation" class="content-box">doc</div>
-            <div id="columns" class="content-box">col</div>
-            <div id="editSearch" class="content-box content-box-active"></div>
+            <div id="documentation" class="content-box content-box-active">
+                <p>Relation documentation: </p>
+                <div id="doc-info"></div><br><br>
+                <span>Queries:</span>
+                <select name="queries">
+                    <option>Compare Yelp vs Yellow Pages for restaurants</option>
+                    <option>Look for two restaurants from Yelp</option>
+                    <option>Extract data from World Bank Repository</option>
+                    <option>Look for home near a vendor</option>
+                    <option>Look for two vendors from Yellow Pages</option>
+                    <option>Greyhound Bus to Vegas connecting to Atlas Tour</option>
+                    <option>Expedia Travel to Las Vegas for a Show</option>
+                    <option>Combine Travel and Home Search (Expedia)</option>
+                    <option>Combine Travel and Home Search (SouthWest)</option>
+                    <option>Plan Multi-City Itinerary</option>
+                    <option>Amtrak train to Vegas connecting to Atlas Tour</option>
+                    <option>Compare SouthWest and Expedia prices</option>
+                    <option>Open houses in the USA</option>
+                    <option>Amtrak Train Schedule</option>
+                    <option>Greyhound Bus Schedule</option>
+                    <option>SouthWest Airlines Schedule</option>
+                    <option>House Inflation Calculator</option>
+                    <option selected>Amtrak train to Vegas for a Show</option>
+                    <option>Greyhound bus to Vegas for a Show</option>
+                    <option>Plan trip to see your favorite artist</option>
+                </select><br>
+                <span>Description:</span><br>
+                <div id="query-desc"></div>
+            </div>
+            <div id="columns" class="content-box">
+                <p>Available columns:</p>
+                <table id="col-table" align="center">
+                    <tr>
+                        <td><input name="today" type="checkbox">Today</td>
+                        <td><input name="tomorrow" type="checkbox">Tomorrow</td>
+                    </tr>
+                    <tr>
+                        <td><input name="departs" type="checkbox">Departs</td>
+                        <td><input name="arrivedate" type="checkbox">Arrive date</td>
+                    </tr>
+                    <tr>
+                        <td><input name="arrives" type="checkbox">Arrives</td>
+                        <td><input name="traincost" type="checkbox">Train cost</td>
+                    </tr>
+                    <tr>
+                        <td><input name="duration" type="checkbox">Duration</td>
+                    </tr>
+                </table>
+                <p>Your search result table will look as below:</p>
+                <div id="search-columns"></div>
+            </div>
+            <div id="editSearch" class="content-box"></div>
             <div id="searchProgress" class="content-box">prog</div>
         </div>
     </div>

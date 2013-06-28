@@ -109,7 +109,6 @@
 #searchnav li a {
 	text-decoration: none;
     text-shadow: 1px 1px 1px #fff;
-    padding: 5px 15px;
 	-webkit-border-radius: 5px;
    	-moz-border-radius: 5px;
    	padding: 5px 15px;
@@ -150,6 +149,47 @@
 
 .column * {
     display: block;
+}
+
+#documentation {
+    text-align: center;
+}
+
+#doc-info {
+    width: 500px;
+    height: 200px;
+    background: white;
+    display: inline-block;
+}
+
+#query-desc {
+    width: 500px;
+    height: 200px;
+    background: white;
+    display: inline-block;
+}
+
+#columns {
+    text-align: center;
+}
+
+#col-table {
+    text-align: left;
+}
+
+#col-table tr {
+    line-height: 25px;
+}
+
+#col-table td {
+    width: 125px;
+}
+
+#search-columns {
+    width: 500px;
+    height: 200px;
+    background: white;
+    display: inline-block;
 }
 
 textarea {
