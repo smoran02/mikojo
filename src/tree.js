@@ -1,6 +1,8 @@
 $(function(){
-        
+
         $.ui.dynatree.nodedatadefaults["icon"] = false;
+
+        var nodeName = "";
 
         $("#tree").dynatree({
             onActivate: function(node) {
@@ -17,6 +19,8 @@ $(function(){
                     },
                     onDragStop: function(node) {
                         logMsg("tree.onDragStop(%o)", node);
+                        nodeName = node.data.title;
+                        alert(nodeName);
                     }
             },
             children: [ // Pass an array of nodes.
@@ -90,7 +94,7 @@ $(function(){
                             {title: "/"},
                             {title: "Integer-in-range"}
                         ]},
-                        {title: "Time", isFolder: true, expand: true, icon: null, addClass: "custom10", children: [ 
+                        {title: "Time", isFolder: true, expand: true, icon: null, addClass: "custom10", children: [
                             {title: "Universaltime"},
                             {title: "Current-ut"},
                             {title: "Current-date"},
@@ -108,7 +112,7 @@ $(function(){
                             {title: "String-contains"},
                             {title: "String="}
                         ]},
-                        {title: "Worldbank", isFolder: true, expand: true, icon: null, addClass: "custom12", children: [ 
+                        {title: "Worldbank", isFolder: true, expand: true, icon: null, addClass: "custom12", children: [
                             {title: "Worldbank-indicator"},
                             {title: "Worldbank-data"}
                         ]}
@@ -117,7 +121,15 @@ $(function(){
             ]
         });
 
-        $("#droppableArea").droppable({
+        $('#searchnav a').on('click', function(){
+            $('.content-link-active').removeClass('content-link-active');
+            $(this).addClass('content-link-active');
+            $('.content-box-active').removeClass('content-box-active');
+            var index = $(this).parent('li').index();
+            $('#searchcontainer > div').eq(index).addClass('content-box-active');
+        });
+        
+        $("#editSearch").droppable({
             hoverClass: "drophover",
             addClasses: true,
             over: function(event, ui) {
@@ -129,9 +141,9 @@ $(function(){
         });
 
         $('#clear').on('click', function(){
-            $('#droppableArea').html("");
+            $('#searchcontainer > div').html("");
         });
 
         $('.rowcontainer').sortable({axis: "x"});
-        $('#droppableArea').disableSelection();
+        $('#editSearch').disableSelection();
 });

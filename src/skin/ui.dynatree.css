@@ -23,20 +23,23 @@
 	display: inline-block;
 }
 
-#droppableArea {
-	height: 89.9%;
-	padding: 0px;
-	margin: 0px;
+.content-box {
+    display: none;
+    position: absolute;
+    height: 89.9%;
+    padding: 0px;
+    margin: 0px;
     width: 100%;
-    border: 1px solid #AAAAAA; 
-    background-color: rgba(224, 224, 224, 1);
-   	color: #000;
-   	position: relative;
-   	display: inline-block;
+    border: 1px solid #AAAAAA;
     overflow: scroll;
+    background-color: rgba(224, 224, 224, 1);
 }
 
-#droppableArea.drophover {
+.content-box-active {
+    display: block;
+}
+
+#editSearch.drophover {
       border: 1px solid black;
       background: rgba(224, 224, 224, 0.5);
 }
@@ -116,6 +119,16 @@
 #searchnav li a:hover {
 	background: #efefe9;
     color: #dc692e;
+}
+
+#searchnav .content-link-active {
+    background-color: rgba(224, 224, 224, 1);
+    color: black;
+}
+
+#searchnav .content-link-active:hover {
+    background-color: rgba(224, 224, 224, 1);
+    color: black;
 }
 
 .rowcontainer {
