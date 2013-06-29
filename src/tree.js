@@ -6,7 +6,7 @@ $(function(){
 
         $("#tree").dynatree({
             onActivate: function(node) {
-
+                $('#doc-info').html("<p>" + node.data.title + " documentation here.</p>");
             },
             persist: true,
             minExpandLevel: 2,
@@ -128,6 +128,11 @@ $(function(){
             $('#searchcontainer > div').eq(index).addClass('content-box-active');
         });
         
+        var index = $('#col-table tr').children('td').length;
+        for (var i = 0; i < index; i++) {
+            $('#col-search p').append($('#col-table td').eq(i).text() + " | ");
+        }
+
         $("#editSearch").droppable({
             hoverClass: "drophover",
             addClasses: true,
@@ -144,7 +149,7 @@ $(function(){
             $('#doc-info').html("");
             $('#query-desc').html("");
             $('#searchProgress').html("");
-            $('#search-columns').html("");
+            $('#col-search').html("");
         });
 
         $('#col-table input').prop('checked', true);

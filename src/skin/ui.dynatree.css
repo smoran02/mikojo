@@ -160,6 +160,7 @@
     height: 200px;
     background: white;
     display: inline-block;
+    text-align: left;
 }
 
 #query-desc {
@@ -167,6 +168,7 @@
     height: 200px;
     background: white;
     display: inline-block;
+    text-align: left;
 }
 
 #columns {
@@ -185,11 +187,13 @@
     width: 125px;
 }
 
-#search-columns {
+#col-search {
     width: 500px;
     height: 200px;
     background: white;
     display: inline-block;
+    text-align: left;
+    overflow: scroll;
 }
 
 textarea {
