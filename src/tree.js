@@ -130,7 +130,7 @@ $(function(){
         
         var index = $('#col-table tr').children('td').length;
         for (var i = 0; i < index; i++) {
-            $('#col-search p').append($('#col-table td').eq(i).text() + " | ");
+            $('#col-search').append("<div class='col-search-item'>" + $('#col-table td').eq(i).text() + "</div>");
         }
 
         $("#editSearch").droppable({
@@ -149,11 +149,13 @@ $(function(){
             $('#doc-info').html("");
             $('#query-desc').html("");
             $('#searchProgress').html("");
+            $('#col-table').html("");
             $('#col-search').html("");
         });
 
         $('#col-table input').prop('checked', true);
 
-        $('.rowcontainer').sortable({axis: "x"});
+        $('#col-search').sortable({axis: "x"});
+        $('#col-search').disableSelection();
         $('#editSearch').disableSelection();
 });

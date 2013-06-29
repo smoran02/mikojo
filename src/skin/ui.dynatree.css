@@ -156,15 +156,16 @@
 }
 
 #doc-info {
-    width: 500px;
+    width: 650px;
     height: 200px;
+    margin-bottom: 20px;
     background: white;
     display: inline-block;
     text-align: left;
 }
 
 #query-desc {
-    width: 500px;
+    width: 650px;
     height: 200px;
     background: white;
     display: inline-block;
@@ -177,6 +178,7 @@
 
 #col-table {
     text-align: left;
+    height: 150px;
 }
 
 #col-table tr {
@@ -188,12 +190,28 @@
 }
 
 #col-search {
-    width: 500px;
+    width: 650px;
     height: 200px;
     background: white;
     display: inline-block;
     text-align: left;
     overflow: scroll;
+    white-space: nowrap;
+    cursor: default;
+}
+
+.col-search-item {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    background-color: #AAAAAA;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.col-search-item:first-child {
+    border-left: 1px solid black;
 }
 
 textarea {
